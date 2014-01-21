@@ -16,9 +16,9 @@ using System.Net;
 ///     1:SNCode
 ///     2:检测时间
 ///     3-10:测试结果
-///     11-22:结论
-///     23:总体结论
-///     24:用户名
+///     11-20:结论
+///     21:总体结论
+///     22:用户名
 /// }
 /// </summary>
 /// 
@@ -48,13 +48,13 @@ public class HandAjax_Print : IHttpHandler {
         }
 
         t_str = t_str.Replace("$SNLabel$", objList[1]);
-        t_str = t_str.Replace("$总体结论$", objList[23]);
-        t_str = t_str.Replace("$检验员$", objList[24]);
+        t_str = t_str.Replace("$总体结论$", objList[21]);
+        t_str = t_str.Replace("$检验员$", objList[22]);
         t_str = t_str.Replace("$检验时间$", objList[2]);
         for (int i = 0; i < 8;i++ ){
             t_str = t_str.Replace("$" + (i + 1).ToString() + "测试结果$", objList[i + 3]);
         }
-        for (int i = 0; i < 12;i++ ){
+        for (int i = 0; i < 10;i++ ){
             t_str = t_str.Replace("$" + (i + 1).ToString() + "结论$", objList[i + 11]);
         }
 

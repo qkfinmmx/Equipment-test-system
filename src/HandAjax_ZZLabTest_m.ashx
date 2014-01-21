@@ -13,8 +13,8 @@ using System.Web.Script.Serialization;
 ///     1:SNCode
 ///     2:检测时间
 ///     3-10:测试结果
-///     11-22:结论
-///     23:总体结论
+///     11-20:结论
+///     21:总体结论
 /// }
 /// </summary>
 
@@ -32,14 +32,12 @@ public class HandAjax_ZZLabTest_m : IHttpHandler {
 
         string check1str = Convert.ToString(context.Request.Params["c1"]);
         string check2str = Convert.ToString(context.Request.Params["c2"]);
-        string check3str = Convert.ToString(context.Request.Params["c3"]);
-        string check4str = Convert.ToString(context.Request.Params["c4"]);
 
         List<string> StrdataSend = new List<string>();
         
         ClassZZLabTest_c ZZTest = new ClassZZLabTest_c(value1str, value2str, value3str, value4str,
             value5str, value6str, value7str, value8str,
-            check1str, check2str, check3str, check4str);
+            check1str, check2str);
         
         switch(ZZTest.GetInitRtv()){
             case -1:{//-1:输入不合法

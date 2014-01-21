@@ -14,14 +14,14 @@ using System.Web;
 public class ClassZZLabTest_c : ClassTestBase
 {
     private int InitRtv;
-    private string Res1, Res2, Res3, Res4, Res5, Res6, Res7, Res8, Res9, ResA, ResB, ResC;
+    private string Res1, Res2, Res3, Res4, Res5, Res6, Res7, Res8, Res9, ResA;
     private string Result1, Result2, Result3, Result4, Result5, Result6, Result7, Result8;
     private string ResTotal;
     
 	public ClassZZLabTest_c(string strv1,string strv2,string strv3,
         string strv4,string strv5,string strv6,
         string strv7,string strv8,string strc1,
-        string strc2,string strc3,string strc4)
+        string strc2)
 	{
         double dParam1, dParam2, dParam3, dParam4, dParam5, dParam6, dParam7, dParam8;
         dParam1 = 2800; dParam2 = 0.8; dParam3 = 0.3; dParam4 = 1.5;
@@ -111,24 +111,10 @@ public class ClassZZLabTest_c : ClassTestBase
                 ResA = "不合格";
             }
 
-            if (strc3 == "on"){
-                ResB = "合格";
-            }
-            else{
-                ResB = "不合格";
-            }
-
-            if (strc4 == "on"){
-                ResC = "合格";
-            }
-            else{
-                ResC = "不合格";
-            }
-
             if (Res1 == "合格" && Res2 == "合格" && Res3 == "合格"
                 && Res4 == "合格" && Res5 == "合格" && Res6 == "合格"
                 && Res7 == "合格" && Res8 == "合格" && Res9 == "合格"
-                && ResA == "合格" && ResB == "合格" && ResC == "合格"){
+                && ResA == "合格" ){
                 InitRtv = 1;
                 ResTotal = "本产品经检验合格";
             }
@@ -180,8 +166,6 @@ public class ClassZZLabTest_c : ClassTestBase
         ListResRtv.Add(Res8);
         ListResRtv.Add(Res9);
         ListResRtv.Add(ResA);
-        ListResRtv.Add(ResB);
-        ListResRtv.Add(ResC);
         return ListResRtv;
     }
 

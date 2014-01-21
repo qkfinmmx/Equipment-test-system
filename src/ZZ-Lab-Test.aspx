@@ -24,9 +24,7 @@
                             v7: $("#value7").val(),
                             v8: $("#value8").val(),
                             c1: $('input[name="check1"]:checked').val(),
-                            c2: $('input[name="check2"]:checked').val(),
-                            c3: $('input[name="check3"]:checked').val(),
-                            c4: $('input[name="check4"]:checked').val()
+                            c2: $('input[name="check2"]:checked').val()
                         },
                         datatype: "json",
                         success: function (obj) {
@@ -35,15 +33,15 @@
                                 g_data = data;
                                 $("#errorMsgdiv").hide();
                                 $("#SNLabel").text(data[1].toString());
-                                $("#totalspan").text(data[23].toString());
+                                $("#totalspan").text(data[21].toString());
                                 $("#checktime").text("检测时间:" + data[2].toString());
                                 for (var i = 0; i < 8; i++) {
                                     $("#testresult" + (i + 1).toString()).text(data[3 + i].toString());
                                 }
-                                for (var i = 0; i < 12; i++) {
+                                for (var i = 0; i < 10; i++) {
                                     $("#subresult" + (i + 1).toString()).text(data[11 + i].toString());
                                 }
-                                $("#user").text($("#username").text());
+                                $("#user").text($("#username").html());
                                 $("#tabsConstantdiv").show();
                                 $("#divrunat").fadeIn(500);
 
@@ -224,44 +222,22 @@
                         </tr>
                         <tr>
                             <td>
-                                外观:无磕碰、划痕
+                                外观:没有明显划痕、碰伤污垢、变形、色差
                             </td>
                             <td>
-                                <input type="radio" name="check1" value="on" checked>正常</input><input type="radio"
-                                    name="check1" value="off">不正常</input>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                外观:无锈迹、污斑
-                            </td>
-                            <td>
-                                <input type="radio" name="check2" value="on" checked>正常</input><input type="radio"
-                                    name="check2" value="off">不正常</input>
+                                <input type="radio" name="check1" value="on" checked />正常
+                                <input type="radio" name="check1" value="off" />不正常
                             </td>
                             <td>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                外观:标牌牢固
+                                外观:螺丝没有松动、打花、生锈、断裂
                             </td>
                             <td>
-                                <input type="radio" name="check3" value="on" checked>正常</input><input type="radio"
-                                    name="check3" value="off">不正常</input>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                外观:无毛刺
-                            </td>
-                            <td>
-                                <input type="radio" name="check4" value="on" checked>正常</input><input type="radio"
-                                    name="check4" value="off">不正常</input>
+                                <input type="radio" name="check2" value="on" checked />正常
+                                <input type="radio" name="check2" value="off" />不正常
                             </td>
                             <td>
                             </td>
@@ -516,13 +492,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td rowspan="4" class="tdclass">
+                                <td rowspan="2" class="tdclass">
                                     <div align="center">
                                         外观</div>
                                 </td>
                                 <td colspan="3" class="tdclass">
                                     <div align="center">
-                                        无磕碰、划痕</div>
+                                        没有明显划痕、碰伤污垢、变形、色差</div>
                                 </td>
                                 <td height="26" class="tdclass">
                                     <div align="center">
@@ -532,31 +508,11 @@
                             <tr>
                                 <td colspan="3" class="tdclass">
                                     <div align="center">
-                                        无锈迹、污斑</div>
+                                        螺丝没有松动、打花、生锈、断裂</div>
                                 </td>
                                 <td height="26" class="tdclass">
                                     <div align="center">
                                         <span class="spandiv" id="subresult10">$A结论$</span></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="tdclass">
-                                    <div align="center">
-                                        标牌牢固</div>
-                                </td>
-                                <td height="26" class="tdclass">
-                                    <div align="center">
-                                        <span class="spandiv" id="subresult11">$B结论$</span></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" class="tdclass">
-                                    <div align="center">
-                                        无毛刺</div>
-                                </td>
-                                <td height="26" class="tdclass">
-                                    <div align="center">
-                                        <span class="spandiv" id="subresult12">$C结论$</span></div>
                                 </td>
                             </tr>
                             <tr>
