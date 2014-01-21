@@ -9,6 +9,15 @@
     <script type="text/javascript" src="js/basejq_menuaction.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            // control left
+            var win_width = $(window).width();
+            if (win_width <= 982) {
+                $(".content").css("left", "20%");
+            }
+            else {
+                $(".content").css("left", ((win_width - 600) / 2).toString() + "px");
+            }
+
             $("#navend_1").click(function () {
                 window.top.location.href = "Nav-Default.aspx";
             });
@@ -38,6 +47,29 @@
                 $("#maskdiv").fadeIn(100);
                 $("#contentdiv").fadeIn(100);
             });
+            $(window).resize(function () {
+                var win_width = $(window).width();
+                if (win_width <= 982) {
+                    $(".content").css("left", "20%");
+                }
+                else {
+                    $(".content").css("left", ((win_width-600)/2).toString()+"px");
+                }
+            });
+        });
+        // ajax funclist
+        $(document).ready(function () {
+            $.ajax({
+                type: "post",
+                url: "HandFuncTest.ashx",
+                datatype: "json",
+                success: function (obj) {
+                    var data = eval(obj);
+                    for (var i = 0; i < data.length; i++) {
+                        $("#funclist").append(data[i]);
+                    }
+                }
+            });
         });
     </script>
     <link href="style/NacStyle.css" rel="stylesheet" type="text/css" />
@@ -48,10 +80,9 @@
     <form id="form1" runat="server">
     <div class="mask" id="maskdiv" style="display: none;"></div>
     <div class="content" id="contentdiv" style="display:none;"> 
-        <center>
-            <asp:Button ID="ButtonZZLabTestLink" runat="server" Text="转子实验台-转子本体检测" CssClass="button blue" style="margin-left:auto;margin-right:auto;font-family:'微软雅黑';width:80%;" />
-        </center>
         <span id="close" style="font-family: Verdana, Arial, Helvetica, sans-serif;">x</span>
+        <div id="funclist" style="text-align:center">
+        </div>
     </div>
     <div class="Menu">
         <div class="Menu_One">

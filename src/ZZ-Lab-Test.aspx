@@ -73,7 +73,7 @@
                     success: function (obj) {
                         var data = eval(obj);
                         if (data[0].toString() == "Success") {
-                            var winPrint = window.open(data[1].toString(), "打印页面", "", "");
+                            var winPrint = window.open(data[1].toString(), "_blank", "", "");
                             winPrint.document.location.reload();
                             winPrint.print();
                         }
@@ -83,32 +83,7 @@
             });
         });
     </script>
-    <style type="text/css">
-        body h3
-        {
-            font-family: Georgia, "Times New Roman" , Times, serif, "宋体";
-            font-size: 12px;
-            font-weight: normal;
-            margin-top: 2px;
-            margin-bottom: 2px;
-        }
-        body h1
-        {
-            margin-top: 5px;
-            margin-bottom: 5px;
-            font-family: Georgia, "Times New Roman" , Times, serif, "宋体";
-            font-weight: bold;
-        }
-        .spandiv
-        {
-            margin-left: 12px;
-            margin-right: 12px;
-        }
-        .tdclass
-        {
-            border: 1px solid #999;
-        }
-    </style>
+    <link href="style/bodyStyle.css" rel="stylesheet" type="text/css"/>    
     <link href="style/NacStyle.css" rel="stylesheet" type="text/css" />
     <link href="style/buttonStyle.css" rel="stylesheet" type="text/css" />
 </head>
