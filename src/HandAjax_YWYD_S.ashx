@@ -17,7 +17,7 @@ public class HandAjax_YWYD_S : IHttpHandler {
 
         List<string> StrdataSend = new List<string>();
         ClassCommonJudge tJduge = new ClassCommonJudge(checkstrlist);
-        StrdataSend.Add(tJduge.GetSNCode());
+        StrdataSend.Add("DRYW1XTB" + tJduge.GetSNCode());
         StrdataSend.Add(tJduge.GetCheckTime());
         for (int i = 0; i < checkstrlist.Count; i++)
             StrdataSend.Add(tJduge.GetItemResult()[i]);

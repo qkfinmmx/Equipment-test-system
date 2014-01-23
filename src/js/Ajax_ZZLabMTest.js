@@ -31,7 +31,9 @@ $(document).ready(function () {
                     }
                     $("#ContentPlaceHolderReport_divrunat").html(divrunathtml);
                     $("#tabsConstantdiv").show();
-                    $("#ContentPlaceHolderReport_divrunat").fadeIn(500);
+                    $("#ContentPlaceHolderReport_divrunat").fadeIn(500, function () {
+                        $("html, body").animate({ scrollTop: $(document).height() }, 'slow');
+                    });
                 }
             });
         }

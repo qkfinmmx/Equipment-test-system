@@ -12,7 +12,7 @@ public class HandMenuNav : IHttpHandler {
         NavDom.Add(convertLink("主导航", "img/webnav_24.png", "Nav-Default.aspx"));
         NavDom.Add(convertLink("域详细信息", "img/ComPuter_24.png", "Nav-Serve-Inf.aspx"));
         NavDom.Add(convertLink("域用户管理", "img/UserHead-24.png", "Nav-User-Manage.aspx"));
-        NavDom.Add(convertLinkJavascript("测试对象选择", "img/SYSTEM_NOWTIME_24.png", "$('.Menu').css('display', 'none');$('#maskdiv').fadeIn(100);$('#contentdiv').fadeIn(100);"));
+        NavDom.Add(convertLinkJavascript("测试对象选择", "img/SYSTEM_NOWTIME_24.png", "$('.Menu').css('display', 'none');$('#maskdiv').fadeIn('slow');$('#contentdiv').fadeIn('slow');"));
 
         JavaScriptSerializer jsonout = new JavaScriptSerializer();
         string jsonout_str = jsonout.Serialize(NavDom);

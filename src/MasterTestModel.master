@@ -20,6 +20,7 @@
     <div class="mask" id="maskdiv" style="display: none;"></div>
     <div class="content" id="contentdiv" style="display:none;"> 
         <span id="close" style="font-family: Verdana, Arial, Helvetica, sans-serif;">x</span>
+        <div></div>
         <div id="funclist" style="text-align:center">
         </div>
     </div>

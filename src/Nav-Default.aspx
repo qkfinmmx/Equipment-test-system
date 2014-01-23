@@ -7,28 +7,30 @@
     <title>系统主导航</title>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/json2.js"></script>
-    <script type="text/javascript" src="js/subcontent.js"></script>
     <script type="text/javascript" src="js/navmenu.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="js/subcontent.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-        $(".sublinkevent").click(function () {
-            $("#maskdiv").fadeIn(100);
-            $("#contentdiv").fadeIn(100);
-        });
-    });          
+        $(document).ready(function () {
+            $(".sublinkevent").click(function () {
+                $("#maskdiv").fadeIn("slow");
+                $("#contentdiv").fadeIn("slow");
+            });
+        });          
     </script>
     <link href="style/bodyStyle.css" rel="stylesheet" type="text/css"/>    
     <link href="style/NacStyle.css" rel="stylesheet" type="text/css" />
     <link href="style/buttonStyle.css" rel="stylesheet" type="text/css" />
+    <link href="js/plugin/jquery.mCustomScrollbar.css" rel="Stylesheet" type="text/css" />
 </head>
 
-<body class="mainbody" oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<body class="mainbody">
     <form id="form1" runat="server">
     <div class="mask" id="maskdiv" style="display: none;"></div>
     <div class="content" id="contentdiv" style="display:none;"> 
         <span id="close" style="font-family: Verdana, Arial, Helvetica, sans-serif;">x</span>
-        <div id="funclist" style="text-align:center">
-        </div>
+        <div style="height:8px;"></div>
+        <div id="funclist" style="text-align:center;"></div>
     </div>
     <div class="Menu" id="NavMenuDIV"> 
     </div>

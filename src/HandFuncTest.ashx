@@ -14,6 +14,9 @@ public class HandFuncTest : IHttpHandler {
         DOMList.Add(ConvertDOM("转子实验台-转子模块检测", "Default-Model-ZZ-Lab-M-Test.aspx"));
         DOMList.Add(ConvertDOM("一维运动控制实验台-本体检测", "Default-Model-YWYD-Lab-S-Test.aspx"));
         DOMList.Add(ConvertDOM("一维运动控制实验台-本体控制箱检测", "Default-Model-YWYD-Lab-K-Test.aspx"));
+        DOMList.Add(ConvertDOM("便携式数据采集仪检测", "Default-Model-DAQ-Test.aspx"));
+        DOMList.Add(ConvertDOM("传感器实验箱检测", "Default-Model-CGQSYX-Test.aspx"));
+        DOMList.Add(ConvertDOM("测控电路实验箱检测", "Default-Model-CKDLSYX-Test.aspx"));
 
         JavaScriptSerializer jsonserial = new JavaScriptSerializer();
         string jsonstr = jsonserial.Serialize(DOMList);

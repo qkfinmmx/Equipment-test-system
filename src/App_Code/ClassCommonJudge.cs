@@ -36,6 +36,6 @@ public class ClassCommonJudge :ClassTestBase
     }
 
     public string GetSNCode() {
-        return "DRZZSYT" + this.GetBaseSNCode();
+        return this.GetBaseSNCode();
     }
 }

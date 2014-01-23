@@ -31,7 +31,7 @@ public class HandAjax_ZZLabTest_MM : IHttpHandler {
 
         List<string> StrdataSend = new List<string>();
         ClassCommonJudge tJduge = new ClassCommonJudge(checkstrlist);
-        StrdataSend.Add(tJduge.GetSNCode());
+        StrdataSend.Add("DRZZSYM" + tJduge.GetSNCode());
         StrdataSend.Add(tJduge.GetCheckTime());
         for (int i = 0; i < checkstrlist.Count; i++)
             StrdataSend.Add(tJduge.GetItemResult()[i]);
