@@ -33,17 +33,14 @@ public class HandAjax_Print : IHttpHandler {
         StreamReader t_sr = null;
         StreamWriter t_sw = null;
         string t_str;
-        try
-        {
+        try{
             t_sr = new StreamReader(TemplatPath, Ecode);
             t_str = t_sr.ReadToEnd();
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex){
             throw ex;
         }
-        finally
-        {
+        finally{
             t_sr.Close();
         }
 

@@ -18,6 +18,16 @@
                 $(".content").css("left", ((win_width - 600) / 2).toString() + "px");
             }
 
+            $(window).resize(function () {
+                var win_width = $(window).width();
+                if (win_width <= 982) {
+                    $(".content").css("left", "20%");
+                }
+                else {
+                    $(".content").css("left", ((win_width - 600) / 2).toString() + "px");
+                }
+            });
+
             $("#navend_1").click(function () {
                 window.top.location.href = "Nav-Default.aspx";
             });
@@ -27,11 +37,12 @@
             $("#navend_3").click(function () {
                 window.top.location.href = "Nav-User-Manage.aspx";
             });
+            /*
             $("#navend_4").click(function () {
                 $(".Menu").css("display", "none");
                 $("#maskdiv").fadeIn(100);
                 $("#contentdiv").fadeIn(100);
-            });
+            });*/
             $("#close").click(function () {
                 $("#maskdiv").fadeOut(100);
                 $("#contentdiv").fadeOut(100);
@@ -46,15 +57,6 @@
             $(".sublinkevent").click(function () {
                 $("#maskdiv").fadeIn(100);
                 $("#contentdiv").fadeIn(100);
-            });
-            $(window).resize(function () {
-                var win_width = $(window).width();
-                if (win_width <= 982) {
-                    $(".content").css("left", "20%");
-                }
-                else {
-                    $(".content").css("left", ((win_width-600)/2).toString()+"px");
-                }
             });
         });
         // ajax funclist
@@ -99,7 +101,7 @@
         </div>
         <div class="Menu_One">
             <div class="Menu_Float1"><img src="img/SYSTEM_NOWTIME_24.png" alt="UserManage" /></div>
-            <div class="Menu_Float2" id="navend_4">测试对象选择</div>
+            <div class="Menu_Float2" onclick="$('.Menu').css('display', 'none');$('#maskdiv').fadeIn(100);$('#contentdiv').fadeIn(100);">测试对象选择</div>
         </div>
     </div>
     

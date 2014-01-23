@@ -141,6 +141,8 @@
 	height: 20px;
 	cursor: pointer;
 	background-color: #FFF;
+	text-decoration: none;
+	color: #000;
 }
 .Menu_Float2:hover{
 	background-color: #B6BED3;

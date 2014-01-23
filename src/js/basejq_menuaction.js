@@ -10,7 +10,7 @@ $(function(){
 	});
 	$("#EventJsNav").hover(function () {  
 				var Nav_left = $("#EventJsNav").offset().left-4;
-				var Nav_top = $("#EventJsNav").offset().top-99;
+				var Nav_top = $("#EventJsNav").offset().top-100;
 				$(".Menu").css("display","block");
 				$(".Menu").css("left",Nav_left);
 				$(".Menu").css("top",Nav_top);

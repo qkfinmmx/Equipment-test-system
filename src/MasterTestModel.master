@@ -1,18 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ZZ-Lab-Test.aspx.cs" Inherits="ZZ_Lab_Test" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterTestModel.master.cs" Inherits="MasterTestModel" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>转子本体检测</title>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/json2.js"></script>
-    <script type="text/javascript" src="js/Ajax_ZZLabTest.js"></script>
     <script type="text/javascript" src="js/subcontent.js"></script>
     <script type="text/javascript" src="js/navmenu.js"></script>
     <link href="style/bodyStyle.css" rel="stylesheet" type="text/css"/>    
     <link href="style/NacStyle.css" rel="stylesheet" type="text/css" />
     <link href="style/buttonStyle.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
 </head>
+
 <body class="mainbody" oncontextmenu=self.event.returnValue=false onselectstart="return false">
     <form id="form1" runat="server">
     <div class="mask" id="maskdiv" style="display: none;"></div>
@@ -36,124 +40,15 @@
         </div>
         <div class="divmainheadinf" style="vertical-align: top">
             <img src="img/wheel_32.png" alt="UserHead-32_img" />
-            <strong style="vertical-align: top">转子本体检测</strong> - 转子本体检测数据录入、及检测报表生成
+            <strong style="vertical-align: top">
+                <asp:Label ID="LabelTitle" runat="server" Text="Label"></asp:Label></strong> - 
+            <asp:Label ID="LabelDetail" runat="server" Text="Label"></asp:Label>
         </div>
         <div style="clear: both">
         </div>
         <div class="tabsConstant">
             <div class="divcontantlayer">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                转子转动速度峰值
-                            </td>
-                            <td>
-                                <input type="text" id="value1" class="inputbox" />
-                            </td>
-                            <td>
-                                rad/min
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                无偏振振动加速度
-                            </td>
-                            <td>
-                                <input type="text" id="value2" class="inputbox" />
-                            </td>
-                            <td>
-                                mm/(s*s)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                无偏振振动速度
-                            </td>
-                            <td>
-                                <input type="text" id="value3" class="inputbox" />
-                            </td>
-                            <td>
-                                mm/s
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                1号偏振点振动加速度
-                            </td>
-                            <td>
-                                <input type="text" id="value4" class="inputbox" />
-                            </td>
-                            <td>
-                                mm/(s*s)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                1号偏振点振动速度
-                            </td>
-                            <td>
-                                <input type="text" id="value5" class="inputbox" />
-                            </td>
-                            <td>
-                                mm/s
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                无偏振基准频率(2000rad/min)
-                            </td>
-                            <td>
-                                <input type="text" id="value6" class="inputbox" />
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                1号偏振点基准频率(2000rad/min)
-                            </td>
-                            <td>
-                                <input type="text" id="value7" class="inputbox" />
-                            </td>
-                            <td>
-                                Hz
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                1号偏振点基频FFT大小(2000rad/min)
-                            </td>
-                            <td>
-                                <input type="text" id="value8" class="inputbox" />
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                外观:没有明显划痕、碰伤污垢、变形、色差
-                            </td>
-                            <td>
-                                <input type="radio" name="check1" value="on" checked />正常
-                                <input type="radio" name="check1" value="off" />不正常
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                外观:螺丝没有松动、打花、生锈、断裂
-                            </td>
-                            <td>
-                                <input type="radio" name="check2" value="on" checked />正常
-                                <input type="radio" name="check2" value="off" />不正常
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <asp:ContentPlaceHolder id="ContentPlaceHolderInputTable" runat="server"></asp:ContentPlaceHolder>
             </div>
             <div style="margin-top: 8px;">
                 <div id="errorMsgdiv" style="display: none;">

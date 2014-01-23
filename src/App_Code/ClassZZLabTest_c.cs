@@ -24,7 +24,7 @@ public class ClassZZLabTest_c : ClassTestBase
         string strc2)
 	{
         double dParam1, dParam2, dParam3, dParam4, dParam5, dParam6, dParam7, dParam8;
-        dParam1 = 2800; dParam2 = 0.8; dParam3 = 0.3; dParam4 = 1.5;
+        dParam1 = 3000; dParam2 = 0.8; dParam3 = 0.3; dParam4 = 1.5;
         dParam5 = 5.2; dParam6 = 60; dParam7 = 33.3; dParam8 = 50;
 
         double douv1, douv2, douv3, douv4, douv5, douv6, douv7, douv8;
