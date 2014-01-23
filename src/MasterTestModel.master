@@ -4,7 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>转子本体检测</title>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/json2.js"></script>
     <script type="text/javascript" src="js/subcontent.js"></script>
@@ -12,9 +11,7 @@
     <link href="style/bodyStyle.css" rel="stylesheet" type="text/css"/>    
     <link href="style/NacStyle.css" rel="stylesheet" type="text/css" />
     <link href="style/buttonStyle.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder id="head" runat="server">
-        
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 
 <body class="mainbody" oncontextmenu=self.event.returnValue=false onselectstart="return false">
@@ -33,16 +30,12 @@
     <div class="divcontant">
         <div class="divsolic">
         </div>
-        <div style="float: right">
-            <p>
-                欢迎,<em><span id="username">Label</span></em>登陆系统!
-            </p>
+        <div style="float:right">
+            <asp:Label ID="Label_INF" runat="server" Text=""></asp:Label>
         </div>
         <div class="divmainheadinf" style="vertical-align: top">
             <img src="img/wheel_32.png" alt="UserHead-32_img" />
-            <strong style="vertical-align: top">
-                <asp:Label ID="LabelTitle" runat="server" Text="Label"></asp:Label></strong> - 
-            <asp:Label ID="LabelDetail" runat="server" Text="Label"></asp:Label>
+            <asp:ContentPlaceHolder id="ContentPlaceHolderTitle" runat="server"></asp:ContentPlaceHolder>
         </div>
         <div style="clear: both">
         </div>
@@ -58,12 +51,12 @@
                 <center>
                     <button class="button blue" id="buildbtn" style="margin-left: auto; margin-right: auto;
                         font-family: '微软雅黑'">
-                        提交生成报表</button>
+                        生成报表</button>
                 </center>
             </div>
         </div>
         <div id="tabsConstantdiv" class="tabsConstant" style="display: none; border-top-style: none;">
-            <div runat="server" id="divrunat" class="divcontantlayer" style="display: none;"></div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolderReport" runat="server"></asp:ContentPlaceHolder>
             <center>
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
@@ -74,21 +67,14 @@
                         <td>
                             <button class="button blue" id="ButtonPrint" style="margin-left: auto; margin-right: auto;
                                 font-family: '微软雅黑'">
-                                打印报表</button>
-                        </td>
-                        <td width="50">
-                        </td>
-                        <td>
-                            <button class="button blue" id="ButtonModify" style="margin-left: auto; margin-right: auto;
-                                font-family: '微软雅黑'">
-                                修改报表</button>
+                                提交打印报表</button>
                         </td>
                         <td width="50">
                         </td>
                         <td>
                             <button class="button blue" id="ButtonFinish" style="margin-left: auto; margin-right: auto;
                                 font-family: '微软雅黑'">
-                                完成检测</button>
+                                进行下次检测</button>
                         </td>
                     </tr>
                 </table>

@@ -6,74 +6,18 @@
 <head runat="server">
     <title>系统主导航</title>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/basejq_menuaction.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/subcontent.js"></script>
+    <script type="text/javascript" src="js/navmenu.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            // control left
-            var win_width = $(window).width();
-            if (win_width <= 982) {
-                $(".content").css("left", "20%");
-            }
-            else {
-                $(".content").css("left", ((win_width - 600) / 2).toString() + "px");
-            }
-
-            $(window).resize(function () {
-                var win_width = $(window).width();
-                if (win_width <= 982) {
-                    $(".content").css("left", "20%");
-                }
-                else {
-                    $(".content").css("left", ((win_width - 600) / 2).toString() + "px");
-                }
-            });
-
-            $("#navend_1").click(function () {
-                window.top.location.href = "Nav-Default.aspx";
-            });
-            $("#navend_2").click(function () {
-                window.top.location.href = "Nav-Serve-Inf.aspx";
-            });
-            $("#navend_3").click(function () {
-                window.top.location.href = "Nav-User-Manage.aspx";
-            });
-            /*
-            $("#navend_4").click(function () {
-                $(".Menu").css("display", "none");
-                $("#maskdiv").fadeIn(100);
-                $("#contentdiv").fadeIn(100);
-            });*/
-            $("#close").click(function () {
-                $("#maskdiv").fadeOut(100);
-                $("#contentdiv").fadeOut(100);
-            });
-            $("#close").hover(function () {
-                $("#close").css("background-color", "#E04343");
-                $("#close").css("color", "#FFFFFF");
-            }, function () {
-                $("#close").css("background-color", "#FFFFFF");
-                $("#close").css("color", "#888888");
-            });
-            $(".sublinkevent").click(function () {
-                $("#maskdiv").fadeIn(100);
-                $("#contentdiv").fadeIn(100);
-            });
+    $(document).ready(function () {
+        $(".sublinkevent").click(function () {
+            $("#maskdiv").fadeIn(100);
+            $("#contentdiv").fadeIn(100);
         });
-        // ajax funclist
-        $(document).ready(function () {
-            $.ajax({
-                type: "post",
-                url: "HandFuncTest.ashx",
-                datatype: "json",
-                success: function (obj) {
-                    var data = eval(obj);
-                    for (var i = 0; i < data.length; i++) {
-                        $("#funclist").append(data[i]);
-                    }
-                }
-            });
-        });
+    });          
     </script>
+    <link href="style/bodyStyle.css" rel="stylesheet" type="text/css"/>    
     <link href="style/NacStyle.css" rel="stylesheet" type="text/css" />
     <link href="style/buttonStyle.css" rel="stylesheet" type="text/css" />
 </head>
@@ -86,25 +30,8 @@
         <div id="funclist" style="text-align:center">
         </div>
     </div>
-    <div class="Menu">
-        <div class="Menu_One">
-            <div class="Menu_Float1"><img src="img/webnav_24.png" alt="Computer" /></div>
-            <div class="Menu_Float2" id="navend_1">主导航</div>
-        </div>
-        <div class="Menu_One">
-            <div class="Menu_Float1"><img src="img/ComPuter_24.png" alt="Computer" /></div>
-            <div class="Menu_Float2" id="navend_2">域详细信息</div>
-        </div>
-        <div class="Menu_One">
-            <div class="Menu_Float1"><img src="img/UserHead-24.png" alt="UserManage" /></div>
-            <div class="Menu_Float2" id="navend_3">域用户管理</div>
-        </div>
-        <div class="Menu_One">
-            <div class="Menu_Float1"><img src="img/SYSTEM_NOWTIME_24.png" alt="UserManage" /></div>
-            <div class="Menu_Float2" onclick="$('.Menu').css('display', 'none');$('#maskdiv').fadeIn(100);$('#contentdiv').fadeIn(100);">测试对象选择</div>
-        </div>
+    <div class="Menu" id="NavMenuDIV"> 
     </div>
-    
     <div align="center"> <img src="img/LOGO_Back.png" alt="Logo_Back" /> </div>
     <div class="divcontant">
         <div class="divsolic"></div>

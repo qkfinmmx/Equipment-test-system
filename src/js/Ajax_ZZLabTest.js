@@ -23,7 +23,7 @@ $(document).ready(function () {
                     if (data[0].toString() == "InputScuess") {  //scuess
                         g_data = data;
                         $("#errorMsgdiv").hide();
-                        var divrunathtml = $("#divrunat").html();
+                        var divrunathtml = $("#ContentPlaceHolderReport_divrunat").html();
                         divrunathtml = divrunathtml.replace("$SNLabel$", data[1].toString());
                         divrunathtml = divrunathtml.replace("$检验时间$", "检测时间:" + data[2].toString());
                         divrunathtml = divrunathtml.replace("$总体结论$", data[21].toString());
@@ -34,9 +34,9 @@ $(document).ready(function () {
                         for (var i = 0; i < 10; i++) {
                             divrunathtml = divrunathtml.replace("$" + (i + 1).toString() + "结论$", data[11 + i].toString());
                         }
-                        $("#divrunat").html(divrunathtml);
+                        $("#ContentPlaceHolderReport_divrunat").html(divrunathtml);
                         $("#tabsConstantdiv").show();
-                        $("#divrunat").fadeIn(500);
+                        $("#ContentPlaceHolderReport_divrunat").fadeIn(500);
                     }
                     else {  //error
                         $("#errorMsgdiv").show();
@@ -46,15 +46,8 @@ $(document).ready(function () {
         }
         return false;
     });
-    $("#ButtonModify").click(function () {
-        $("#tabsConstantdiv").hide();
-        $("#divrunat").hide();
-        return false;
-    });
     $("#ButtonFinish").click(function () {
-        $("#tabsConstantdiv").hide();
-        $("#divrunat").hide();
-        return false;
+        $(window).reload();
     });
     $("#ButtonPrint").click(function () {
         g_data.push($("#username").text());
