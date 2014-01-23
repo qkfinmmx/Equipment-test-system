@@ -47,7 +47,7 @@ $(document).ready(function () {
         return false;
     });
     $("#ButtonFinish").click(function () {
-        $(window).reload();
+        return true;
     });
     $("#ButtonPrint").click(function () {
         g_data.push($("#username").text());

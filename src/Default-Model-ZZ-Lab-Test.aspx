@@ -15,7 +15,7 @@
 
 <asp:Content ID="ContentInputTable" ContentPlaceHolderID="ContentPlaceHolderInputTable"
     runat="Server">
-    <table>
+    <table border="0" cellspacing="8" cellpadding="0">
         <tbody>
             <tr>
                 <td>

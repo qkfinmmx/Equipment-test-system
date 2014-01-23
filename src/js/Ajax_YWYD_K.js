@@ -1,28 +1,18 @@
 ﻿// JavaScript Document
-/// <summary>
-/// JSON数据结构
-/// {
-///     0:SNCode
-///     1:检测时间
-///     2-9:结论
-///     10:总体结论
-/// }
-/// </summary>
 $(document).ready(function () {
     var g_data;
     $("#buildbtn").click(function () {
         if ($("#tabsConstantdiv").css("display") == "none") {
             $.ajax({
                 type: "post",
-                url: "HandAjax_ZZLabTest_T.ashx",
+                url: "HandAjax_YWYD_K.ashx",
                 data: { c1: $('input[name="check1"]:checked').val(),
                     c2: $('input[name="check2"]:checked').val(),
                     c3: $('input[name="check3"]:checked').val(),
                     c4: $('input[name="check4"]:checked').val(),
                     c5: $('input[name="check5"]:checked').val(),
                     c6: $('input[name="check6"]:checked').val(),
-                    c7: $('input[name="check7"]:checked').val(),
-                    c8: $('input[name="check8"]:checked').val()
+                    c7: $('input[name="check7"]:checked').val()
                 },
                 datatype: "json",
                 success: function (obj) {
@@ -32,9 +22,9 @@ $(document).ready(function () {
                     var divrunathtml = $("#ContentPlaceHolderReport_divrunat").html();
                     divrunathtml = divrunathtml.replace("$SNLabel$", data[0].toString());
                     divrunathtml = divrunathtml.replace("$检验时间$", "检测时间:" + data[1].toString());
-                    divrunathtml = divrunathtml.replace("$总体结论$", data[10].toString());
+                    divrunathtml = divrunathtml.replace("$总体结论$", data[9].toString());
                     divrunathtml = divrunathtml.replace("$检验员$", $("#username").html());
-                    for (var i = 0; i < 8; i++) {
+                    for (var i = 0; i < 7; i++) {
                         divrunathtml = divrunathtml.replace("$" + (i + 1).toString() + "结论$", data[2 + i].toString());
                     }
                     $("#ContentPlaceHolderReport_divrunat").html(divrunathtml);
@@ -50,7 +40,7 @@ $(document).ready(function () {
     });
     $("#ButtonPrint").click(function () {
         g_data.push($("#username").text());
-        g_data.push("ZZ-LAB-T-TEMPLATE.html");
+        g_data.push("YWYDK-LAB-TEMPLATE.html");
         $.ajax({
             type: "post",
             url: "HandPrintCommon.ashx",
