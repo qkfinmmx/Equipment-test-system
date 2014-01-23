@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title>母版</title>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/json2.js"></script>
     <script type="text/javascript" src="js/subcontent.js"></script>
@@ -30,12 +31,14 @@
     <div class="divcontant">
         <div class="divsolic">
         </div>
-        <div style="float:right">
-            <asp:Label ID="Label_INF" runat="server" Text=""></asp:Label>
-        </div>
         <div class="divmainheadinf" style="vertical-align: top">
-            <img src="img/wheel_32.png" alt="UserHead-32_img" />
-            <asp:ContentPlaceHolder id="ContentPlaceHolderTitle" runat="server"></asp:ContentPlaceHolder>
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            	<tr>
+            		<td width="36"><img src="img/wheel_32.png" alt="UserHead-32_img" /></td>
+                    <td><asp:ContentPlaceHolder id="ContentPlaceHolderTitle" runat="server"></asp:ContentPlaceHolder></td>
+                    <td align="right"><asp:Label ID="Label_INF" runat="server" Text=""></asp:Label></td>
+            	</tr>
+            </table>   
         </div>
         <div style="clear: both">
         </div>

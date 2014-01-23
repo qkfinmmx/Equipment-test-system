@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterTestModel.master" AutoEventWireup="true"
+﻿<%@ Page Title="转子实验台本体检测" Language="C#" MasterPageFile="~/MasterTestModel.master" AutoEventWireup="true"
     CodeFile="Default-Model-ZZ-Lab-Test.aspx.cs" Inherits="Default_Model_ZZ_Lab_Test" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <title>转子实验台本体检测</title>
     <script type="text/javascript" src="js/Ajax_ZZLabTest.js"></script>
 </asp:Content>
 
@@ -109,8 +108,8 @@
                     外观:没有明显划痕、碰伤污垢、变形、色差
                 </td>
                 <td>
-                    <input type="radio" name="check1" value="on" checked />正常
-                    <input type="radio" name="check1" value="off" />不正常
+                    <input type="radio" name="check1" value="on" checked />合格
+                    <input type="radio" name="check1" value="off" />不合格
                 </td>
                 <td>
                 </td>
@@ -120,8 +119,8 @@
                     外观:螺丝没有松动、打花、生锈、断裂
                 </td>
                 <td>
-                    <input type="radio" name="check2" value="on" checked />正常
-                    <input type="radio" name="check2" value="off" />不正常
+                    <input type="radio" name="check2" value="on" checked />合格
+                    <input type="radio" name="check2" value="off" />不合格
                 </td>
                 <td>
                 </td>

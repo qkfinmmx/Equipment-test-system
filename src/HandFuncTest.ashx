@@ -10,6 +10,7 @@ public class HandFuncTest : IHttpHandler {
     public void ProcessRequest (HttpContext context) {
         List<string> DOMList = new List<string>();
         DOMList.Add(ConvertDOM("转子实验台-转子本体检测", "Default-Model-ZZ-Lab-Test.aspx"));
+        DOMList.Add(ConvertDOM("转子实验台-转子调速箱检测", "Default-Model-ZZ-Lab-T-Test.aspx"));
 
         JavaScriptSerializer jsonserial = new JavaScriptSerializer();
         string jsonstr = jsonserial.Serialize(DOMList);

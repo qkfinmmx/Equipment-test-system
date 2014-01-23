@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define Publish
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +11,7 @@ public partial class MasterTestModel : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+#if Publish
         if (Session["UserID"] == null)
             Response.Write("<Script language='javascript'>window.top.location.href='Default.aspx';</Script>");
         else
@@ -17,5 +20,6 @@ public partial class MasterTestModel : System.Web.UI.MasterPage
             INF_STR = INF_STR.Replace("$Label$", Session["UserID"].ToString());
             Label_INF.Text = INF_STR;
         }
+#endif 
     }
 }
