@@ -38,7 +38,7 @@ $(document).ready(function () {
                 $("#funclist").append(data[i]);
             }
             var uheight = 31 * data.length;
-            var wheight = $(window).height() * 0.45;
+            var wheight = $(window).height() * 0.5;
             if (uheight > wheight) {
                 $("#funclist").css("height", wheight.toString() + "px");
                 $("#funclist").css("overflow", "auto");

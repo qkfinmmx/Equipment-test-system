@@ -17,6 +17,18 @@ public class HandFuncTest : IHttpHandler {
         DOMList.Add(ConvertDOM("便携式数据采集仪检测", "Default-Model-DAQ-Test.aspx"));
         DOMList.Add(ConvertDOM("传感器实验箱检测", "Default-Model-CGQSYX-Test.aspx"));
         DOMList.Add(ConvertDOM("测控电路实验箱检测", "Default-Model-CKDLSYX-Test.aspx"));
+        DOMList.Add(ConvertDOM("倒立摆实验台控制箱检测", "Default-Model-DLB-Lab-K-Test.aspx"));
+        DOMList.Add(ConvertDOM("倒立摆实验台控制箱本体检测", "Default-Model-DLB-Lab-B-Test.aspx"));
+        DOMList.Add(ConvertDOM("多路输出电源检测", "Default-Model-DLDY-Test.aspx"));
+        DOMList.Add(ConvertDOM("综合实验桌检验检测", "Default-Model-DRLab-Test.aspx"));
+        DOMList.Add(ConvertDOM("距离与位移试验台本体检验", "Default-Model-JLWY-Lab-B-Test.aspx"));
+        DOMList.Add(ConvertDOM("距离与位移试验台控制箱检验", "Default-Model-JLWY-Lab-K-Test.aspx"));
+        DOMList.Add(ConvertDOM("运动控制实验台检验", "Default-Model-YDKZT-Test.aspx"));
+        DOMList.Add(ConvertDOM("PLC实验箱检验", "Default-Model-PLC-Test.aspx"));
+        DOMList.Add(ConvertDOM("可重构综合机电平台本体检验", "Default-Model-KCGJDPT-Lab-B-Test.aspx"));
+        DOMList.Add(ConvertDOM("可重构综合机电平台控制箱检验", "Default-Model-KCGJDPT-Lab-K-Test.aspx"));
+        DOMList.Add(ConvertDOM("扩展模块检验", "Default-Model-KZMK-Test.aspx"));
+        DOMList.Add(ConvertDOM("球杆系统实验台检验", "Default-Model-QG-Test.aspx"));
 
         JavaScriptSerializer jsonserial = new JavaScriptSerializer();
         string jsonstr = jsonserial.Serialize(DOMList);

@@ -42,7 +42,7 @@ public class HandPrintCommon : IHttpHandler {
         }
         
         t_str = t_str.Replace("$SNLabel$", objList[0]);
-        t_str = t_str.Replace("$检验时间$", objList[1]);
+        t_str = t_str.Replace("$检验时间$", "检验时间:"+objList[1]);
         t_str = t_str.Replace("$总体结论$", objList[objList.Count-3]);
         t_str = t_str.Replace("$检验员$", objList[objList.Count - 2]);
         for (int i = 2; i <= objList.Count - 4;i++ ){
