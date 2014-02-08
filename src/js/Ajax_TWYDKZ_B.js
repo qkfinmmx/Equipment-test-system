@@ -6,12 +6,13 @@ $(document).ready(function () {
         if ($("#tabsConstantdiv").css("display") == "none") {
             $.ajax({
                 type: "post",
-                url: "HandAjax_YWYD_S.ashx",
+                url: "HandAjax_TWYDKZ_B.ashx",
                 data: { c1: $('input[name="check1"]:checked').val(),
                     c2: $('input[name="check2"]:checked').val(),
                     c3: $('input[name="check3"]:checked').val(),
                     c4: $('input[name="check4"]:checked').val(),
-                    c5: $('input[name="check5"]:checked').val()
+                    c5: $('input[name="check5"]:checked').val(),
+                    c6: $('input[name="check6"]:checked').val()
                 },
                 datatype: "json",
                 success: function (obj) {
@@ -21,9 +22,9 @@ $(document).ready(function () {
                     var divrunathtml = $("#ContentPlaceHolderReport_divrunat").html();
                     divrunathtml = divrunathtml.replace("$SNLabel$", data[0].toString());
                     divrunathtml = divrunathtml.replace("$检验时间$", "检测时间:" + data[1].toString());
-                    divrunathtml = divrunathtml.replace("$总体结论$", data[7].toString());
+                    divrunathtml = divrunathtml.replace("$总体结论$", data[8].toString());
                     divrunathtml = divrunathtml.replace("$检验员$", $("#username").html());
-                    for (var i = 0; i < 5; i++) {
+                    for (var i = 0; i < 6; i++) {
                         divrunathtml = divrunathtml.replace("$" + (i + 1).toString() + "结论$", data[2 + i].toString());
                     }
                     $("#ContentPlaceHolderReport_divrunat").html(divrunathtml);
@@ -42,7 +43,7 @@ $(document).ready(function () {
     $("#ButtonPrint").click(function () {
         if (g_flag == 0) {
             g_data.push($("#username").text());
-            g_data.push("YWYD-S-LAB-TEMPLATE.html");
+            g_data.push("TWYDKZ-ST-LAB-TEMPLATE.html");
             g_flag = 1;
         }
         $.ajax({

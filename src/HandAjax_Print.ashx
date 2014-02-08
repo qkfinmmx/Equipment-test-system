@@ -71,6 +71,33 @@ public class HandAjax_Print : IHttpHandler {
             t_sw.Close();
         }
 
+        List<string> ColumnName, value;
+        ColumnName = new List<string>();
+        value = new List<string>();
+        ColumnName.Add("SN序列号");
+        ColumnName.Add("检验时间");
+        ColumnName.Add("总体结论");
+        ColumnName.Add("检验员");
+        for(int i = 3; i <= 10; ++i){
+            ColumnName.Add("测试结果" + (i - 2).ToString());
+        }
+        for(int i= 11; i <= 20; ++i){
+            ColumnName.Add("测试结论" + (i - 10).ToString());
+        }
+        value.Add(objList[1]);
+        value.Add(objList[2]);
+        value.Add(objList[21]);
+        value.Add(objList[22]);
+        for (int i = 0; i < 8; i++)
+            value.Add(objList[i + 3]);
+        for (int i = 0; i < 10; i++)
+            value.Add(objList[i + 11]);
+
+        //response DB
+        ClassDB tCDB = new ClassDB();
+        tCDB.SetTestData(objList[1], ColumnName, value);
+
+        //response html
         List<string> listJson = new List<string>();
         listJson.Add("Success");
         listJson.Add("Report-html\\" + objList[1] + ".html");

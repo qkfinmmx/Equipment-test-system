@@ -1,12 +1,13 @@
 ﻿// JavaScript Document
 $(document).ready(function () {
     var g_data;
+    var g_flag = 0;
     $("#buildbtn").click(function () {
         if ($("#tabsConstantdiv").css("display") == "none") {
             $.ajax({
                 type: "post",
                 url: "HandAjax_DAQ.ashx",
-                data: {c1: $('input[name="check1"]:checked').val(),
+                data: { c1: $('input[name="check1"]:checked').val(),
                     c2: $('input[name="check2"]:checked').val(),
                     c3: $('input[name="check3"]:checked').val(),
                     c4: $('input[name="check4"]:checked').val(),
@@ -40,8 +41,11 @@ $(document).ready(function () {
         return true;
     });
     $("#ButtonPrint").click(function () {
-        g_data.push($("#username").text());
-        g_data.push("DAQ-LAB-TEMPLATE.html");
+        if (g_flag == 0) {
+            g_data.push($("#username").text());
+            g_data.push("DAQ-LAB-TEMPLATE.html");
+            g_flag = 1;
+        }
         $.ajax({
             type: "post",
             url: "HandPrintCommon.ashx",

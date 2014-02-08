@@ -56,6 +56,35 @@ public class HandAjax_Print_YDKZT : IHttpHandler {
             t_sw.Close();
         }
 
+        List<string> ColumnName, value;
+        ColumnName = new List<string>();
+        value = new List<string>();
+        ColumnName.Add("SN序列号");
+        ColumnName.Add("检验时间");
+        ColumnName.Add("总体结论");
+        ColumnName.Add("检验员");
+        for (int i = 0; i < 1; i++) {
+            ColumnName.Add("测试结果" + (i + 1).ToString());
+        }
+        for(int i = 0;i<11;i++){
+            ColumnName.Add("结论" + (i + 1).ToString());
+        }
+        value.Add(objList[1]);
+        value.Add(objList[2]);
+        value.Add(objList[3]);
+        value.Add(objList[objList.Count - 1]);
+        for(int i = 0;i<1;i++){
+            value.Add(objList[i + 4]);
+        }
+        for(int i = 0;i<11;i++){
+            value.Add(objList[i + 5]);
+        }
+
+        //response DB
+        ClassDB tCDB = new ClassDB();
+        tCDB.SetTestData(objList[1], ColumnName, value);
+
+        //response html
         List<string> listJson = new List<string>();
         listJson.Add("Success");
         listJson.Add("Report-html\\" + objList[1] + ".html");

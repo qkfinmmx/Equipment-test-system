@@ -1,6 +1,7 @@
 ﻿// JavaScript Document
 $(document).ready(function () {
     var g_data;
+    var g_flag = 0;
     $("#buildbtn").click(function () {
         if ($("#tabsConstantdiv").css("display") == "none") {
             $.ajax({
@@ -41,8 +42,11 @@ $(document).ready(function () {
         return true;
     });
     $("#ButtonPrint").click(function () {
-        g_data.push($("#username").text());
-        g_data.push("DLBB-LAB-TEMPLATE.html");
+        if (g_flag == 0) {
+            g_data.push($("#username").text());
+            g_data.push("DLBB-LAB-TEMPLATE.html");
+            g_flag = 1;
+        }
         $.ajax({
             type: "post",
             url: "HandPrintCommon.ashx",

@@ -29,6 +29,12 @@ public class HandFuncTest : IHttpHandler {
         DOMList.Add(ConvertDOM("可重构综合机电平台控制箱检验", "Default-Model-KCGJDPT-Lab-K-Test.aspx"));
         DOMList.Add(ConvertDOM("扩展模块检验", "Default-Model-KZMK-Test.aspx"));
         DOMList.Add(ConvertDOM("球杆系统实验台检验", "Default-Model-QG-Test.aspx"));
+        DOMList.Add(ConvertDOM("双容型水箱本体检验", "Default-Model-SRXSX-Lab-B-Test.aspx"));
+        DOMList.Add(ConvertDOM("双容型水箱控制箱检验", "Default-Model-SRXSX-Lab-K-Test.aspx"));
+        DOMList.Add(ConvertDOM("二维运动控制实验台(伺服)本体检验", "Default-Model-TWYDKZSF-Lab-B-Test.aspx"));
+        DOMList.Add(ConvertDOM("二维运动控制实验台(伺服)控制箱检验", "Default-Model-TWYDKZSF-Lab-K-Test.aspx"));
+        DOMList.Add(ConvertDOM("二维运动控制实验台(步进)本体检验", "Default-Model-TWYDKZ-Lab-B-Test.aspx"));
+        DOMList.Add(ConvertDOM("二维运动控制实验台(步进)控制箱检验", "Default-Model-TWYDKZ-Lab-K-Test.aspx"));
 
         JavaScriptSerializer jsonserial = new JavaScriptSerializer();
         string jsonstr = jsonserial.Serialize(DOMList);
@@ -36,7 +42,7 @@ public class HandFuncTest : IHttpHandler {
     }
     
     private string ConvertDOM(string title,string url){
-        string template = "<a href=\"$url$\" class=\"button blue\" style=\"margin-left:auto;margin-right:auto;margin-top:8px;font-family:'微软雅黑';width:80%;\">$title$</a>";
+        string template = "<div><a href=\"$url$\" class=\"button blue\" style=\"margin-left:auto;margin-right:auto;margin-top:8px;margin-bottom:8px;font-family:'微软雅黑';width:50%;\">$title$</a></div>";
         template = template.Replace("$url$", url);
         template = template.Replace("$title$", title);
         return template;
