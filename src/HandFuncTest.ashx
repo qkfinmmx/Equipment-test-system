@@ -28,6 +28,7 @@ public class HandFuncTest : IHttpHandler {
         DOMList.Add(ConvertDOM("可重构综合机电平台本体检验", "Default-Model-KCGJDPT-Lab-B-Test.aspx"));
         DOMList.Add(ConvertDOM("可重构综合机电平台控制箱检验", "Default-Model-KCGJDPT-Lab-K-Test.aspx"));
         DOMList.Add(ConvertDOM("扩展模块检验", "Default-Model-KZMK-Test.aspx"));
+        DOMList.Add(ConvertDOM("环境扩展模块检验", "Default-Model-HJJC-Test.aspx"));
         DOMList.Add(ConvertDOM("球杆系统实验台检验", "Default-Model-QG-Test.aspx"));
         DOMList.Add(ConvertDOM("双容型水箱本体检验", "Default-Model-SRXSX-Lab-B-Test.aspx"));
         DOMList.Add(ConvertDOM("双容型水箱控制箱检验", "Default-Model-SRXSX-Lab-K-Test.aspx"));
